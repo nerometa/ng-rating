@@ -1,0 +1,104 @@
+<main class="h-screen grid place-content-center">
+  <article
+    class="card bg-gradient-to-b from-dark-blue-700 to-dark-blue-900 gradient p-8 rounded-3xl h-[26rem] w-[26rem]"
+  >
+    <div class="p-4 bg-dark-blue-600 rounded-full w-12 h-12 mb-8">
+      <img
+        ngSrc="/assets/icon-star.svg"
+        width="16"
+        height="16"
+        alt="star icon"
+      />
+    </div>
+
+    <h1 id="card-header" class="text-2xl font-bold mb-4">How did we do?</h1>
+
+    <p id="card-message" class="text-custom-neutral-300 mb-8">
+      Please let us know how we did with your support request. All feedback is
+      appreciated to help us improve our offering!
+    </p>
+
+    <form [formGroup]="ratingForm" id="support-rating" (submit)="onSubmit()">
+      <ul class="flex justify-between mb-8">
+        <li>
+          <input
+            formControlName="rating"
+            type="radio"
+            class="hidden peer"
+            name="rating"
+            id="rating-1"
+            [value]="1"
+          />
+          <label for="rating-1" class="rating-radio">
+            <span class="relative top-[0.925rem]">1</span>
+          </label>
+        </li>
+        <li>
+          <input
+            formControlName="rating"
+            type="radio"
+            class="hidden peer"
+            name="rating"
+            id="rating-2"
+            [value]="2"
+          />
+          <label for="rating-2" class="rating-radio">
+            <span class="relative top-[0.925rem]">2</span>
+          </label>
+        </li>
+        <li>
+          <input
+            formControlName="rating"
+            type="radio"
+            class="hidden peer"
+            name="rating"
+            id="rating-3"
+            [value]="3"
+          />
+          <label for="rating-3" class="rating-radio">
+            <span class="relative top-[0.925rem]">3</span>
+          </label>
+        </li>
+        <li>
+          <input
+            formControlName="rating"
+            type="radio"
+            class="hidden peer"
+            name="rating"
+            id="rating-4"
+            [value]="4"
+          />
+          <label for="rating-4" class="rating-radio">
+            <span class="relative top-[0.925rem]">4</span>
+          </label>
+        </li>
+        <li>
+          <input
+            formControlName="rating"
+            type="radio"
+            class="hidden peer"
+            name="rating"
+            id="rating-5"
+            [value]="5"
+          />
+          <label for="rating-5" class="rating-radio">
+            <span class="relative top-[0.925rem]">5</span>
+          </label>
+        </li>
+      </ul>
+
+      @if (isSubmitted && ratingForm.errors?.['required']) {
+      <div class="invalid">
+        <p>Please give us your score before submitting.</p>
+      </div>
+      }
+
+      <button
+        type="submit"
+        class="bg-primary w-full p-3 rounded-full tracking-[0.2rem] font-bold hover:bg-white hover:text-primary"
+      >
+        SUBMIT
+      </button>
+    </form>
+  </article>
+</main>
