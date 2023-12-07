@@ -2,3 +2,7 @@
   @apply inline-block bg-fm-dark-blue w-11 sm:w-[50px] aspect-square text-center text-fm-light-grey rounded-full hover:bg-fm-medium-grey hover:text-white hover:cursor-pointer peer-checked:bg-fm-primary
   peer-checked:text-white peer-hover:transition-all-sine;
 }
+
+.image-container {
+  @apply w-36 sm:w-auto mt-[18px] mb-8 sm:mt-0;
+}

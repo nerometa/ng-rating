@@ -53,14 +53,16 @@
       </button>
     </form>
     } @else {
-    <div class="flex flex-col items-center relative">
-      <img
-        ngSrc="/assets/illustration-thank-you.svg"
-        width="162"
-        height="108"
-        alt="Thank you"
-        class="mt-[18px] mb-8 sm:mt-0"
-      />
+    <div class="flex flex-col items-center">
+      <div class="image-container">
+        <img
+          ngSrc="/assets/illustration-thank-you.svg"
+          width="162"
+          height="108"
+          alt="Thank you"
+          priority
+        />
+      </div>
       <div
         class="score-result px-3 py-[6px] sm:px-4 sm:py-2 bg-fm-dark-blue rounded-full mb-6 sm:mb-8"
       >
