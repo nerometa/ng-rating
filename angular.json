@@ -93,7 +93,7 @@
         "deploy": {
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
-            "outputPath": "dist/ng-rating/browser",
+            "outputPath": "dist/ng-rating",
             "netlifyToken": "nfp_xaAuzPbLwK45ykP7JHwaV6zwHwsZ8eVpeefa",
             "siteId": "06ce0114-69c0-4ea1-8e76-7d30707d351f"
           }
