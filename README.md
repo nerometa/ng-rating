@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution](https://your-solution-url.com)
+- [Solution](https://www.frontendmentor.io/solutions/solution-interactive-rating-component-with-angular-17-tailwind-css-JfZqRt8YXj)
 - [Live Site](https://ng-rating.netlify.app/)
 
 ## My process
