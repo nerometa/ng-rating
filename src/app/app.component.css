@@ -1,3 +1,4 @@
 .rating-radio {
-  @apply inline-block bg-dark-blue-700 w-12 h-12 text-center rounded-full hover:bg-primary hover:cursor-pointer peer-checked:bg-custom-neutral-300;
+  @apply inline-block bg-fm-dark-blue w-11 sm:w-[50px] aspect-square text-center text-fm-light-grey rounded-full hover:bg-fm-medium-grey hover:text-white hover:cursor-pointer peer-checked:bg-fm-primary
+  peer-checked:text-white peer-hover:transition-all-sine;
 }

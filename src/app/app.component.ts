@@ -1,6 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+  ReactiveFormsModule,
+  FormControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +15,12 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'ng-rating';
   isSubmitted = false;
+  ratingScores = [1, 2, 3, 4, 5];
+
   private fb = inject(FormBuilder);
   ratingForm = this.fb.group({
-    rating: [null, [Validators.required]],
+    rating: new FormControl(0, [Validators.required, Validators.min(1)]),
   });
 
   get rating() {
@@ -22,13 +28,6 @@ export class AppComponent {
   }
 
   onSubmit() {
-    this.isSubmitted = true;
-
-    if (!this.ratingForm.valid) {
-      return false;
-    } else {
-      console.log(this.rating);
-      return true;
-    }
+    this.isSubmitted = this.ratingForm.valid;
   }
 }

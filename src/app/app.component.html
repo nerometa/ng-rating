@@ -1,8 +1,11 @@
 <main class="h-screen grid place-content-center">
   <article
-    class="card bg-gradient-to-b from-dark-blue-700 to-dark-blue-900 gradient p-8 rounded-3xl h-[26rem] w-[26rem]"
+    class="card bg-gradient-radial p-4 pb-8 sm:p-8 rounded-3xl mx-6 max-w-[420px]"
   >
-    <div class="p-4 bg-dark-blue-600 rounded-full w-12 h-12 mb-8">
+    @if (!isSubmitted) {
+    <div
+      class="p-3 sm:p-4 w-fit bg-fm-dark-blue rounded-full aspect-square mb-8"
+    >
       <img
         ngSrc="/assets/icon-star.svg"
         width="16"
@@ -11,94 +14,68 @@
       />
     </div>
 
-    <h1 id="card-header" class="text-2xl font-bold mb-4">How did we do?</h1>
+    <h1 id="card-header" class="text-2xl sm:text-[28px] font-bold mb-2">
+      How did we do?
+    </h1>
 
-    <p id="card-message" class="text-custom-neutral-300 mb-8">
+    <p
+      id="card-message"
+      class="text-fm-medium-grey text-sm sm:text-[15px] leading-relaxed mb-6 sm:mb-8"
+    >
       Please let us know how we did with your support request. All feedback is
       appreciated to help us improve our offering!
     </p>
 
     <form [formGroup]="ratingForm" id="support-rating" (submit)="onSubmit()">
-      <ul class="flex justify-between mb-8">
+      <ul class="flex justify-between mb-6 sm:mb-8">
+        @for (score of ratingScores; track $index) {
         <li>
           <input
             formControlName="rating"
             type="radio"
             class="hidden peer"
             name="rating"
-            id="rating-1"
-            [value]="1"
+            [id]="'rating-' + score"
+            [value]="score"
           />
-          <label for="rating-1" class="rating-radio">
-            <span class="relative top-[0.925rem]">1</span>
+          <label [for]="'rating-' + score" class="rating-radio">
+            <span class="relative top-3 sm:top-[14px]">{{ score }}</span>
           </label>
         </li>
-        <li>
-          <input
-            formControlName="rating"
-            type="radio"
-            class="hidden peer"
-            name="rating"
-            id="rating-2"
-            [value]="2"
-          />
-          <label for="rating-2" class="rating-radio">
-            <span class="relative top-[0.925rem]">2</span>
-          </label>
-        </li>
-        <li>
-          <input
-            formControlName="rating"
-            type="radio"
-            class="hidden peer"
-            name="rating"
-            id="rating-3"
-            [value]="3"
-          />
-          <label for="rating-3" class="rating-radio">
-            <span class="relative top-[0.925rem]">3</span>
-          </label>
-        </li>
-        <li>
-          <input
-            formControlName="rating"
-            type="radio"
-            class="hidden peer"
-            name="rating"
-            id="rating-4"
-            [value]="4"
-          />
-          <label for="rating-4" class="rating-radio">
-            <span class="relative top-[0.925rem]">4</span>
-          </label>
-        </li>
-        <li>
-          <input
-            formControlName="rating"
-            type="radio"
-            class="hidden peer"
-            name="rating"
-            id="rating-5"
-            [value]="5"
-          />
-          <label for="rating-5" class="rating-radio">
-            <span class="relative top-[0.925rem]">5</span>
-          </label>
-        </li>
+        }
       </ul>
-
-      @if (isSubmitted && ratingForm.errors?.['required']) {
-      <div class="invalid">
-        <p>Please give us your score before submitting.</p>
-      </div>
-      }
 
       <button
         type="submit"
-        class="bg-primary w-full p-3 rounded-full tracking-[0.2rem] font-bold hover:bg-white hover:text-primary"
+        class="bg-fm-primary w-full p-[0.65rem] rounded-full tracking-[0.2rem] font-bold hover:bg-white hover:text-fm-primary hover:transition-all-sine"
       >
         SUBMIT
       </button>
     </form>
+    } @else {
+    <div class="flex flex-col items-center relative">
+      <img
+        ngSrc="/assets/illustration-thank-you.svg"
+        width="162"
+        height="108"
+        alt="Thank you"
+        class="mt-[18px] mb-8 sm:mt-0"
+      />
+      <div
+        class="score-result px-3 py-[6px] sm:px-4 sm:py-2 bg-fm-dark-blue rounded-full mb-6 sm:mb-8"
+      >
+        <p class="text-fm-primary text-sm sm:text-[15px]">
+          You selected {{ rating?.value }} out of 5
+        </p>
+      </div>
+      <h1 class="text-[28px] font-bold mb-4 sm:mb-3">Thank you!</h1>
+      <p
+        class="text-center text-sm sm:text-[15px] leading-relaxed text-fm-medium-grey"
+      >
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don't hesitate to get in touch!
+      </p>
+    </div>
+    }
   </article>
 </main>
