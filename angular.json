@@ -26,7 +26,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/ng-rating/browser",
+            "outputPath": "dist/ng-rating",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
