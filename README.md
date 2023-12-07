@@ -1,27 +1,56 @@
-# NgRating
+# Frontend Mentor - Interactive rating component solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Frontend Mentor - Interactive rating component solution](#frontend-mentor---interactive-rating-component-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+  - [Author](#author)
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### The challenge
 
-## Build
+Users should be able to:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Select and submit a number rating
+- See the "Thank you" card state after submitting a rating
 
-## Running unit tests
+### Screenshot
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![](./src/assets/Screenshot%202023-12-07%20112503.png)
 
-## Running end-to-end tests
+### Links
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [Solution](https://your-solution-url.com)
+- [Live Site](https://ng-rating.netlify.app/)
 
-## Further help
+## My process
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Angular received a new, big update! So I couldn't wait to implement it. This time I'm more keen of playing around this new update, how different it is to the previous version, etc. Might've been a bit overkill for this challenge, though.
+
+### Built with
+
+- [Angular 17](https://angular.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+
+### What I learned
+
+I learned a lot about new Angular updates and features, obviously. What's new to me is how it could be deploy. I decided to use Netlify to host it, since I heard it supported the latest version of Angular.
+
+For Tailwind, it's the [`peer`](https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state) thing. Pretty useful.
+
+## Author
+
+- Frontend Mentor - [@nerometa](https://www.frontendmentor.io/profile/nerometa)
+- Github - [nerometa](https://www.github.com/nerometa)
